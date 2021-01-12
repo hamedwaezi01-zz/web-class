@@ -1809,7 +1809,6 @@ display: block;
 }
 .ava select, .ava select:focus{
 	text-align:left;
-	padding:;
 	box-shadow:1px 1px 0px rgba(0,0,0, .2);
 	height:30px;
 	border:0;
