@@ -11,8 +11,29 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'mainController@showIndex');
+Route::get('/home', 'mainController@showIndex');
 
+Route::get('/contact', 'mainController@showContact');
+
+Route::get('contact', 'ContactController@contact');
+Route::post('contact', ['as'=>'contact.store','uses'=>'ContactController@contactPost']);
+//Route::get('/', function () {
+//    return view('mainHome');
+//});
+
+
+
+/* AUTH AND VOYAGER MADE THESE!! */
+
+Auth::routes();
+
+Route::get('/log', 'HomeController@index');
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+/* END */
+
+Route::post('/createNewsletter', 'mainController@addNewsletter');
 
