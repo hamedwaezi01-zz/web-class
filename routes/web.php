@@ -14,10 +14,14 @@
 Route::get('/', 'mainController@showIndex');
 Route::get('/home', 'mainController@showIndex');
 
-Route::get('/contact', 'mainController@showContact');
+Route::get('/home2', 'mainController@showIndex2');
 
-Route::get('contact', 'ContactController@contact');
-Route::post('contact', ['as'=>'contact.store','uses'=>'ContactController@contactPost']);
+Route::get("/layout", function(){
+    return view("layouts/main_layout");
+});
+Route::get('/contact', 'ContactController@contact');
+Route::post('/contact', ['as'=>'contact.store','uses'=>'ContactController@contactPost']);
+
 //Route::get('/', function () {
 //    return view('mainHome');
 //});

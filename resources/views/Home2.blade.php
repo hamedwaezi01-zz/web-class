@@ -30,9 +30,6 @@
 
         });
     </script>
-    <script> $(document).ready(function () {
-            $("#headerContact").addClass("active");
-        });</script>
 @stop
 
 @section('content')

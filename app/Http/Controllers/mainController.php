@@ -18,9 +18,13 @@ class mainController extends Controller
 
     }
 
-    public function showContact(){
-        return view('contact');
+    public function showIndex2(){
+
+        return view('Home2');
+
     }
+
+
 
     public function addNewsletter(Request $data){
         Newsletter::create([

@@ -177,7 +177,6 @@ return [
 
         TCG\Voyager\VoyagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        TCG\Voyager\Http\Controllers\VoyagerController::class
     ],
 
     /*
