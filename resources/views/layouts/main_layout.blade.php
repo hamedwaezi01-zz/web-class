@@ -260,17 +260,9 @@
                                        id="headerCategories">Categories <b
                                             class="caret"></b></a>
                                     <ul class="dropdown-menu">
+
                                         <li><a href="/">Home Page</a></li>
-                                        <li><a href="category.html">Category Page</a></li>
-                                        <li><a href="category-list.html">Category List Page</a></li>
-                                        <li><a href="category-fullwidth.html">Category fullwidth</a></li>
-                                        <li><a href="product.html">Detail Product Page</a></li>
-                                        <li><a href="page-sidebar.html">Page with sidebar</a></li>
-                                        <li><a href="register.html">Register Page</a></li>
-                                        <li><a href="order.html">Order Page</a></li>
-                                        <li><a href="cart.html">Cart Page</a></li>
-                                        <li><a href="checkout.html">Checkout Page</a></li>
-                                        <li><a href="contact">Contact Page</a></li>
+                                        @yield('categories')
                                     </ul>
                                 </li>
                                 <li><a href="page-sidebar.html" id="headerAbout">About</a></li>
