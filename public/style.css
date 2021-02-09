@@ -1110,7 +1110,7 @@ html,body {
     margin-top: 40px;
 	text-align:right;
 }
-.fsoc{
+/* .fsoc{
 	float:right;
 }
 .fsoc a {
@@ -1120,6 +1120,36 @@ html,body {
 	text-indent:-9999px;
 	float:left;
 	margin-right:10px;
+} */
+.fsoc{
+    /* position: relative; */
+    float:left;
+    width: 100%;
+}
+
+.fsoc li {
+    border-bottom:1px dashed #AFB7BF;
+    padding: 5px;
+}
+
+.fsoc li i{
+    width: 35px;
+}
+
+.fsoc li a{
+	/* display:block; */
+	 width:28px;
+	height:28px;
+	text-indent:-9999px;
+	/* float:left; */
+    margin-right:10px;
+    color: #666e73;
+}
+
+
+.fsoc li a:hover{
+    color: #1c1f23;
+    text-decoration: none;
 }
 .ftwitter {
 	background:url(images/ftwitter.png) no-repeat;

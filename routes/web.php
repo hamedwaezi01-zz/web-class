@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
 
-// Route::get('/', 'mainController@showIndex');
 Route::redirect('/', '/home', 301);
 Route::get('/home', 'mainController@showIndex');
 
@@ -26,18 +25,22 @@ Route::get('/category/{gid}', 'GroupController@items_cat')
 Route::get('/category/{gid}/{id}', 'ItemController@get_items')
     ->where('gid','[0-9]+')->where('id','[0-9]+')->name('item.one');
 
-Route::get('/home2', 'mainController@showIndex2');
+Route::post('/category/{gid}/{id}', 'ItemController@add_to_chart')
+    ->where('gid','[0-9]+')->where('id','[0-9]+')->name('item.add.chart');
+
+Route::delete('/category/{gid}/{id}', 'ItemController@delete_from_chart')
+    ->where('gid','[0-9]+')->where('id','[0-9]+')->name('item.delete.chart');
+
+Route::post('/review/{gid}/{id}', "ReviewController@add_review")
+    ->where('gid','[0-9]+')->where('id','[0-9]+')->name('review.add');
+
+Route::get('/about', 'aboutController@index')->name('about');
 
 Route::get("/layout", function(){
     return view("layouts/main_layout");
 });
-Route::get('/contact', 'ContactController@contact');
+Route::get('/contact', 'ContactController@contact')->name('contact');
 Route::post('/contact', ['as'=>'contact.store','uses'=>'ContactController@contactPost']);
-
-//Route::get('/', function () {
-//    return view('mainHome');
-//});
-
 
 
 /* AUTH AND VOYAGER MADE THESE!! */

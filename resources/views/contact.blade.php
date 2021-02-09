@@ -35,6 +35,12 @@
         });</script>
 @stop
 
+@section('categories')
+@foreach ($cats as $cat)
+<li style="white-space: nowrap;" ><a href="{{ route('category.one',[$cat['id']]) }}">{{ $cat['name'] }}</a></li>
+@endforeach
+@stop
+
 @section('content')
 
     <div class="container">
@@ -44,11 +50,10 @@
                     <div class="page-title-inner">
                         <div class="row">
                             <div class="col-md-4">
-                                <div class="bread"><a href="contact.html#">Home</a> &rsaquo; Contact</div>
+                                <div class="bread"><a href="/">Home</a> &rsaquo; Contact</div>
                                 <div class="bigtitle">Contact</div>
                             </div>
                             <div class="col-md-3 col-md-offset-5">
-                                <button class="btn btn-default btn-red btn-lg">Purchase Theme</button>
                             </div>
                         </div>
                     </div>

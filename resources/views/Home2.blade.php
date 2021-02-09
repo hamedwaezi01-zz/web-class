@@ -45,7 +45,6 @@
                                 <div class="bigtitle">Contact</div>
                             </div>
                             <div class="col-md-3 col-md-offset-5">
-                                <button class="btn btn-default btn-red btn-lg">Purchase Theme</button>
                             </div>
                         </div>
                     </div>

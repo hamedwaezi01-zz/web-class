@@ -4,37 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
-    <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link href='font-awesome/css/font-awesome.css' rel="stylesheet" type="text/css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"
-          type="text/css">
-    <!-- Bootstrap -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
-    <!-- Main Style -->
     <link rel="stylesheet" href="{{asset('style.css')}}"/>
 
-    <!-- owl Style -->
     <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/owl.transitions.css')}}"/>
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+    </script>
     <script
         src="http://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous"></script>
     <script>
-        /*  */
         $(document).on("click", "#saveNewsletter", function (e) { // Ajax is asynchronous, the success or the error function will be called when the server answers the client
-            //#save is the submit input, #myform is the id of the form,
             e.preventDefault(); // Prevent Default form Submission
 
             $.ajax({
@@ -42,7 +31,6 @@
                 url: '/createNewsletter',
                 data: $("#newsletterForm").serialize(),
                 success: function (store) {
-
                     $('#saveNewsletter').prop('disabled', true);
                     var successmessage = '<div class="alert alert-success"> ' +
                         '<div class="row">' +
@@ -196,65 +184,7 @@
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="/" id="headerHome" class="">Home</a>
-
-                                </li>
-                                {{--                                <li class="dropdown menu-large">--}}
-                                {{--                                    <ul class="dropdown-menu megamenu container row">--}}
-                                {{--                                        <li class="col-sm-4">--}}
-                                {{--                                            <h4>Page Template</h4>--}}
-                                {{--                                            <ul>--}}
-                                {{--                                                <li><a href="/">Home Page</a></li>--}}
-                                {{--                                                <li><a href="category.html">Category Page</a></li>--}}
-                                {{--                                                <li><a href="category-list.html">Category List Page</a></li>--}}
-                                {{--                                                <li><a href="category-fullwidth.html">Category fullwidth</a></li>--}}
-                                {{--                                                <li><a href="product.html">Detail Product Page</a></li>--}}
-                                {{--                                                <li><a href="page-sidebar.html">Page with sidebar</a></li>--}}
-                                {{--                                                <li><a href="register.html">Register Page</a></li>--}}
-                                {{--                                                <li><a href="order.html">Order Page</a></li>--}}
-                                {{--                                                <li><a href="checkout.html">Checkout Page</a></li>--}}
-                                {{--                                                <li><a href="cart.html">Cart Page</a></li>--}}
-                                {{--                                                <li><a href="/contact">Contact Page</a></li>--}}
-                                {{--                                            </ul>--}}
-                                {{--                                            <div class="dashed-nav"></div>--}}
-                                {{--                                        </li>--}}
-                                {{--                                        <li class="col-sm-4">--}}
-                                {{--                                            <h4>Page Template</h4>--}}
-                                {{--                                            <ul>--}}
-                                {{--                                                <li><a href="/">Home Page</a></li>--}}
-                                {{--                                                <li><a href="category.html">Category Page</a></li>--}}
-                                {{--                                                <li><a href="category-list.html">Category List Page</a></li>--}}
-                                {{--                                                <li><a href="category-fullwidth.html">Category fullwidth</a></li>--}}
-                                {{--                                                <li><a href="product.html">Detail Product Page</a></li>--}}
-                                {{--                                                <li><a href="page-sidebar.html">Page with sidebar</a></li>--}}
-                                {{--                                                <li><a href="register.html">Register Page</a></li>--}}
-                                {{--                                                <li><a href="order.html">Order Page</a></li>--}}
-                                {{--                                                <li><a href="checkout.html">Checkout Page</a></li>--}}
-                                {{--                                                <li><a href="cart.html">Cart Page</a></li>--}}
-                                {{--                                                <li><a href="contact">Contact Page</a></li>--}}
-                                {{--                                            </ul>--}}
-                                {{--                                            <div class="dashed-nav"></div>--}}
-                                {{--                                        </li>--}}
-                                {{--                                        <li class="col-sm-4">--}}
-                                {{--                                            <h4>Page Template</h4>--}}
-                                {{--                                            <ul>--}}
-                                {{--                                                <li><a href="/">Home Page</a></li>--}}
-                                {{--                                                <li><a href="category.html">Category Page</a></li>--}}
-                                {{--                                                <li><a href="category-list.html">Category List Page</a></li>--}}
-                                {{--                                                <li><a href="category-fullwidth.html">Category fullwidth</a></li>--}}
-                                {{--                                                <li><a href="product.html">Detail Product Page</a></li>--}}
-                                {{--                                                <li><a href="page-sidebar.html">Page with sidebar</a></li>--}}
-                                {{--                                                <li><a href="register.html">Register Page</a></li>--}}
-                                {{--                                                <li><a href="order.html">Order Page</a></li>--}}
-                                {{--                                                <li><a href="checkout.html">Checkout Page</a></li>--}}
-                                {{--                                                <li><a href="cart.html">Cart Page</a></li>--}}
-                                {{--                                                <li><a href="contact">Contact Page</a></li>--}}
-                                {{--                                            </ul>--}}
-                                {{--                                            <div class="dashed-nav"></div>--}}
-                                {{--                                        </li>--}}
-                                {{--                                    </ul>--}}
-                                {{--                                </li>--}}
-
+                                <li><a href="/" id="headerHome" class="">Home</a></li>
                                 <li class="dropdown">
                                     <a href="/#" class="dropdown-toggle" data-toggle="dropdown"
                                        id="headerCategories">Categories <b
@@ -265,9 +195,8 @@
                                         @yield('categories')
                                     </ul>
                                 </li>
-                                <li><a href="page-sidebar.html" id="headerAbout">About</a></li>
-                                <li><a href="category.html" id="headerProduct">Product</a></li>
-                                <li><a href="contact" id="headerContact" class="">Contact</a></li>
+                                <li><a href="{{ route('about') }}" id="headerAbout">About</a></li>
+                                <li><a href="{{ route('contact') }}" id="headerContact" class="">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -329,125 +258,107 @@
                 </div>
             </div>
         </div>
-    </div><!--end main-nav -->
+    </div>
 
     <div class="container">
-        <ul class="small-menu"><!--small-nav -->
+        <ul class="small-menu">
             @if (Auth::check())
                 <li><a href="/" class="myacc">My Account</a></li>
                 <li><a href="/" class="myshop">Shopping Chart</a></li>
                 <li><a href="/" class="mycheck">Checkout</a></li>
             @endif
-        </ul><!--small-nav -->
+        </ul>
         <div class="clearfix"></div>
         <div class="lines"></div>
 
         @yield('insideMainContainer')
     </div>
     @yield('content')
-
-
     <div class="f-widget"><!--footer Widget-->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4"><!--footer twitter widget-->
-                    <div class="title-widget-bg">
-                        <div class="title-widget">Twitter Updates</div>
-                    </div>
-                    <ul class="tweets">
-                        <li>Check out this great #themeforest item for you
-                            'Simpler Landing' <a href="/#">http://t.co/LbLwldb6 </a>
-                            <span>2 hours ago</span></li>
-                        <li class="lastone">Check out this great #themeforest item for you
-                            'Simpler Landing' <a href="/#">http://t.co/LbLwldb6 </a>
-                            <span>2 hours ago</span></li>
-                    </ul>
-                    <div class="clearfix"></div>
-                    <a href="/#" class="btn btn-default btn-follow"><i class="fa fa-twitter fa-2x"></i>
-                        <div>Follow us on twitter</div>
-                    </a>
-                </div><!--footer twitter widget-->
-                <div class="col-md-4"><!--footer newsletter widget-->
-                    <div class="title-widget-bg">
-                        <div class="title-widget">Newsletter Signup</div>
-                    </div>
-                    <div class="newsletter">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua.
-                        </p>
-                        <form method="POST" action="" id="newsletterForm">
-                            @csrf
-                            <div class="form-group">
-                                <label>Your Email address</label>
-                                <input type="email" class="form-control newstler-input" id="exampleInputEmail1"
-                                       placeholder="Enter email" name="email">
-                                <button class="btn btn-default btn-red btn-sm" id="saveNewsletter">Sign Up</button>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4"><!--footer twitter widget-->
+					<div class="title-widget-bg">
+						<div class="title-widget-cursive">Follow Us</div>
+					</div>
+					<ul style="list-style: none;" class='fsoc'>
+						<li>
+                            <div>
+                                <i class="fa fa-twitter fa-2x"></i>
+                                <a href="#">Twitter</a>
                             </div>
-                        </form>
-                        <div id="newsletterResults">
-                            <!-- All data will display here  -->
-                        </div>
+						</li>
+						<li>
+                            <div>
+                                <i class="fa fa-facebook fa-2x"></i>
+                                <a href="#">Facebook</a>
+                            </div>
+						</li>
+						<li>
+                            <div>
+                                <i class="fa fa-flickr fa-2x"></i>
+                                <a href="#">Flickr</a>
+                            </div>
+						</li>
+						<li>
+                            <div>
+                                <i class="fa fa-feed fa-2x"></i>
+                                <a href="#">Feed</a>
+                            </div>
+						</li>
+					</ul>
+						<div class="clearfix"></div>
+				</div>
+				<div class="col-md-4">
+					<div class="title-widget-bg">
+						<div class="title-widget-cursive">Newsletter Signup</div>
+					</div>
+					<div class="newsletter">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+							ut labore et dolore magna aliqua.
+						</p>
+						<form role="form">
+							<div class="form-group">
+								<label>Your Email address</label>
+								<input type="email" class="form-control newstler-input" id="exampleInputEmail1"
+									   placeholder="Enter email">
+								<button class="btn btn-default btn-red btn-sm">Sign Up</button>
+							</div>
+						</form>
                     </div>
-                </div><!--footer newsletter widget-->
-                <div class="col-md-4"><!--footer contact widget-->
-                    <div class="title-widget-bg">
-                        <div class="title-widget-cursive">Shopping</div>
-                    </div>
-                    <ul class="contact-widget">
-                        <li class="fphone">+387 123 456, +387 123 456 <br/> +387 123 456</li>
-                        <li class="fmobile">+387-123-456-1<br/>+387-123-456-2</li>
-                        <li class="fmail lastone">your@email.com<br/>customer.care@mail.com</li>
-                    </ul>
-                </div><!--footer contact widget-->
+				</div>
+				<div class="col-md-4">
+					<div class="title-widget-bg">
+						<div class="title-widget-cursive">Shopping</div>
+					</div>
+					<ul class="contact-widget">
+						<li>
+                            <i class="fa fa-mobile fa-2x"></i>
+                            <div>
+                                +387 123 456, +387 123 456 <br/> +387 123 456
+                            </div>
+                        </li>
+						<li>
+                            <i class="fa fa-phone fa-2x"></i>
+                            <div>
+                                +387-123-456-1<br/>+387-123-456-2
+                            </div>
+                        </li>
+						<li>
+                            <i class="fa fa-envelope fa-2x"></i>
+                            <div>
+                                your@email.com<br/>customer.care@mail.com
+                            </div>
+                        </li>
+					</ul>
+				</div>
             </div>
-            <div class="spacer"></div>
-        </div>
-    </div><!--footer Widget-->
-    <div class="footer"><!--footer-->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9">
-                    <ul class="footermenu"><!--footer nav-->
-                        <li><a href="/">Home</a></li>
-                        <li><a href="cart.html">My Cart</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
-                        <li><a href="order.html">Completed Orders</a></li>
-                        <li><a href="contact">Contact us</a></li>
-                    </ul><!--footer nav-->
-                    <div class="f-credit">&copy;All rights reserved by <a href="/#">yoursite.com</a></div>
-                    <a href="/">
-                        <div class="payment visa"></div>
-                    </a>
-                    <a href="/">
-                        <div class="payment paypal"></div>
-                    </a>
-                    <a href="/">
-                        <div class="payment mc"></div>
-                    </a>
-                    <a href="/">
-                        <div class="payment nh"></div>
-                    </a>
-                </div>
-                <div class="col-md-3"><!--footer Share-->
-                    <div class="followon">Follow us on</div>
-                    <div class="fsoc">
-                        <a href="http://twitter.com/minimalthemes" class="ftwitter">twitter</a>
-                        <a href="http://www.facebook.com/pages/Minimal-Themes/264056723661265" class="ffacebook">facebook</a>
-                        <a href="/#" class="fflickr">flickr</a>
-                        <a href="/#" class="ffeed">feed</a>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div><!--footer Share-->
-            </div>
-        </div>
-    </div><!--footer-->
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <div class="f-credit">&copy;All rights reserved by <a href="index.html#">yoursite.com</a></div>
+			<div class="spacer"></div>
+		</div>
+	</div><!--footer Widget-->
     <script src="js/jquery-1.11.1.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
 
     <!-- map -->
@@ -455,17 +366,10 @@
     <script type="text/javascript" src="{{asset('js/jquery.ui.map.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/demo.js')}}"></script>
 
-    <!-- owl carousel -->
     <script src="{{asset('js/owl.carousel.min.js')}}"></script>
-
-    <!-- rating -->
     <script src="{{asset('js/rate/jquery.raty.js')}}"></script>
     <script src="{{asset('js/labs.js')}}" type="text/javascript"></script>
-
-    <!-- Add mousewheel plugin (this is optional) -->
     <script type="text/javascript" src="{{asset('js/product/lib/jquery.mousewheel-3.0.6.pack.js')}}"></script>
-
-    <!-- fancybox -->
     <script type="text/javascript" src="{{asset('js/product/jquery.fancybox.js@v=2.1.5')}}"></script>
 
     <!-- custom js -->
